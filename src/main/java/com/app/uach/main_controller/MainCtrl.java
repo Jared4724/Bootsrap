@@ -41,16 +41,16 @@ public class MainCtrl {
 	
 	@GetMapping("/perfil")
     public String mostrarPerfil(Model model) {
-        usuario usuario = new usuario("Juan Pérez", "juan@example.com");
+        usuario usuario = new usuario("Juan Pérez", "juan@example.com", 25);
         model.addAttribute("usuario", usuario); // Nombre en la vista y objeto
         return "perfil"; // Nombre de la plantilla HTML (perfil.html)
     }
 
 	@GetMapping("/ejemplo")
 	public String ejemplo(Model model) {
-		usuario usuario = new usuario("Juan Pérez", "juan@example.com");
+		usuario usuario = new usuario("Juan Pérez", "juan@example.com", 28);
 		model.addAttribute("usuario", usuario);
-		model.addAttribute("color1", true);
+		model.addAttribute("color1", true); // Cambia a false para mostrar el otro panel
 		return "ejemplo"; // nombre de la vista HTML
 	}
 }
