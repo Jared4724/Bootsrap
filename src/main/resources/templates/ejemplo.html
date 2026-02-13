@@ -25,25 +25,31 @@ $(document).ready(function() {
                 <div class="panel with-nav-tabs panel-success">
                     <div class="panel-heading">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1success" data-toggle="tab">Nombre</a></li>
-                            <li><a href="#tab2success" data-toggle="tab">Correo</a></li>
-                            <li><a href="#tab3success" data-toggle="tab">Edad</a></li>
+                            <li class="active"><a href="#tabNombreS" data-toggle="tab">Nombre</a></li>
+                            <li><a href="#tabCorreoS" data-toggle="tab">Correo</a></li>
+                            <li><a href="#tabEdadS" data-toggle="tab">Edad</a></li>
+                            
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown">Más <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#tab4success" data-toggle="tab">Success 4</a></li>
-                                    <li><a href="#tab5success" data-toggle="tab">Success 5</a></li>
+                                    <li th:each="i : ${#numbers.sequence(1, 10)}">
+                                        <a th:href="${'#tab' + i + 'S'}" data-toggle="tab" th:text="${i}"></a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body text-center">
                         <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab1success" th:text="${usuario.nombre}">Nombre</div>
-                            <div class="tab-pane fade" id="tab2success" th:text="${usuario.email}">Correo</div>
-                            <div class="tab-pane fade" id="tab3success" th:text="${usuario.edad}">Edad</div>
-                            <div class="tab-pane fade" id="tab4success">Success 4</div>
-                            <div class="tab-pane fade" id="tab5success">Success 5</div>
+                            <div class="tab-pane fade in active" id="tabNombreS" th:text="${usuario.nombre}"></div>
+                            <div class="tab-pane fade" id="tabCorreoS" th:text="${usuario.email}"></div>
+                            <div class="tab-pane fade" id="tabEdadS" th:text="${usuario.edad}"></div>
+                            
+                            <div th:each="i : ${#numbers.sequence(1, 10)}" 
+                                 class="tab-pane fade" 
+                                 th:id="${'tab' + i + 'S'}" 
+                                 th:text="${i}">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,25 +61,31 @@ $(document).ready(function() {
                 <div class="panel with-nav-tabs panel-info">
                     <div class="panel-heading">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1info" data-toggle="tab">Nombre</a></li>
-                            <li><a href="#tab2info" data-toggle="tab">Correo</a></li>
-                            <li><a href="#tab3info" data-toggle="tab">Edad</a></li>
+                            <li class="active"><a href="#tabNombreI" data-toggle="tab">Nombre</a></li>
+                            <li><a href="#tabCorreoI" data-toggle="tab">Correo</a></li>
+                            <li><a href="#tabEdadI" data-toggle="tab">Edad</a></li>
+                            
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown">Más <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#tab4info" data-toggle="tab">Info 4</a></li>
-                                    <li><a href="#tab5info" data-toggle="tab">Info 5</a></li>
+                                    <li th:each="i : ${#numbers.sequence(1, 10)}">
+                                        <a th:href="${'#tab' + i + 'I'}" data-toggle="tab" th:text="${i}"></a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body text-center">
                         <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab1info" th:text="${usuario.nombre}">Nombre</div>
-                            <div class="tab-pane fade" id="tab2info" th:text="${usuario.email}">Correo</div>
-                            <div class="tab-pane fade" id="tab3info" th:text="${usuario.edad}">Edad</div>
-                            <div class="tab-pane fade" id="tab4info">Info 4</div>
-                            <div class="tab-pane fade" id="tab5info">Info 5</div>
+                            <div class="tab-pane fade in active" id="tabNombreI" th:text="${usuario.nombre}"></div>
+                            <div class="tab-pane fade" id="tabCorreoI" th:text="${usuario.email}"></div>
+                            <div class="tab-pane fade" id="tabEdadI" th:text="${usuario.edad}"></div>
+                            
+                            <div th:each="i : ${#numbers.sequence(1, 10)}" 
+                                 class="tab-pane fade" 
+                                 th:id="${'tab' + i + 'I'}" 
+                                 th:text="${i}">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,4 +93,3 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
-<br/>

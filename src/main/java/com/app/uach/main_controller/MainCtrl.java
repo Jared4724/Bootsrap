@@ -48,7 +48,7 @@ public class MainCtrl {
 
 	@GetMapping("/ejemplo")
 	public String ejemplo(Model model) {
-		usuario usuario = new usuario("Juan Pérez", "juan@example.com", 28);
+		usuario usuario = new usuario("Jared Isai Lopez Espino", "juan@example.com", 23);
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("color1", true); // Cambia a false para mostrar el otro panel
 		return "ejemplo"; // nombre de la vista HTML
