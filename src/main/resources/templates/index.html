@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Ejemplo Thymeleaf Model</title>
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+	<h1 th:text="${ecabezado}"></h1>
+    <!-- Accede al atributo 'mensaje' del modelo usando th:text y ${mensaje} -->
+    
+    <p th:text="${mensaje}"></p>
+    
+    <!-- Se muestra si es verdadero -->
+	<div th:if="${usuarioLogueado}">
+	    <p>Bienvenido de nuevo, usuario.</p>
+	</div>
+	
+	<!-- Se muestra si es falso (th:unless es el contrario de th:if) -->
+	<div th:unless="${usuarioLogueado}">
+	    <p>Por favor, inicie sesión.</p>
+	</div>
+    
+    
+</body>
+</html>

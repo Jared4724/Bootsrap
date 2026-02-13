@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    
+	
+	
+	
+	
+	<tbody>
+        <!-- El th:each repite la fila tr -->
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.nombre}">Nombre</td>
+            <td th:text="${producto.precio}">Precio</td>
+        </tr>
+    </tbody>
+</table>
+
